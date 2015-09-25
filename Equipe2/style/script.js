@@ -133,7 +133,7 @@ angular.module("view").controller("viewController", function($scope){
 		if(user && user.email){
 			if(re.exec(user.email) === null){
 				$scope.errorEmail = "has-error";
-				window.alert("Informe um e-mail valido!");
+				window.alert("Informe um e-mail válido!");
 			} else{
 				$scope.errorEmail = "";
 			}

@@ -1,6 +1,7 @@
 <html ng-app="view">
 	<head>
 		<title>Cadastro de Prestador</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="style/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="style/bootstrap.min.css">
 		<link rel="stylesheet" href="style/style.css">
@@ -101,13 +102,13 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label>Atua&ccedil;&atilde;o (separando por virgulas)</label>
-										<input type="text" class="form-control" placeholder="Informe areas de atua&ccedil;&atilde;o" ng-model="user.profession">
+										<label>Atuação (separando por virgulas)</label>
+										<input type="text" class="form-control" placeholder="Informe areas de atuação" ng-model="user.profession">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Pre&ccedil;o/hora</label>
+										<label>Preço/hora</label>
 										<input type="text" placeholder="R$ 0 000,00" id="value" class="form-control" ng-model="user.value">
 									</div>
 								</div>
@@ -121,7 +122,7 @@
 								</div>
 								<div class="col-md-5">
 									<div class="form-group">
-										<label>Telefone M&oacute;vel</label>
+										<label>Telefone Móvel</label>
 										<input type="text" placeholder="(xxx) x xxxx-xxxx" class="form-control" id="mobile_phone" ng-model="user.mobile_phone">
 									</div>
 								</div>
@@ -147,8 +148,8 @@
 							<div class="row">
 								<div class="col-md-7">
 									<div class="form-group">
-										<label>Endere&ccedil;o</label>
-										<input type="text" placeholder="Informe seu endere&ccedil;o" class="form-control" ng-model="user.address">
+										<label>Endereço</label>
+										<input type="text" placeholder="Informe seu endereço" class="form-control" ng-model="user.address">
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -181,7 +182,7 @@
 					<div class="col-md-6">
 						<div class="footer-options text-right">
 							<a class="footer-button clickable" ng-click="back()" id="back">Voltar</a>
-							<a class="footer-button clickable" ng-click="next()" id="next">Pr&oacute;ximo</a>
+							<a class="footer-button clickable" ng-click="next()" id="next">Próximo</a>
 						</div>
 					</div>
 				</div>
