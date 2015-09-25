@@ -13,39 +13,30 @@ $("#dropdown-signin-button").click(function(){
 	$("#dropdown-signin").toggle(300);
 });
 
-$("#account").click(function(){
-	$("#professional").removeClass("active");
-	$("#content_professional").removeClass("active");
-	$("#personal").removeClass("active");
-	$("#content_personal").removeClass("active");
-
-	$(this).addClass("active");
-	$("#content_account").addClass("active");
+$("#cpf").mask("NNN.NNN.NNN-NN", {
+	translation: {
+		N: {
+			pattern: /[0-9]/, optional:false
+		}
+	}
 });
-
-$("#professional").click(function(){
-	$("#account").removeClass("active");
-	$("#content_account").removeClass("active");
-	$("#personal").removeClass("active");
-	$("#content_personal").removeClass("active");
-
-	$(this).addClass("active");
-	$("#content_professional").addClass("active");
+$("#dob").mask("NO/NO/9999", {
+	translation: {
+		N: {
+			pattern: /[0-9]/, optional: false
+		},
+		O: {
+			pattern: /[0-9]/, optional: true
+		}
+	}
+});	
+$("#cep").mask("NNNNN-999", {
+	translation: {
+		N: {
+			pattern: /[0-9]/, optional:false
+		}
+	}
 });
-
-$("#personal").click(function(){
-	$("#account").removeClass("active");
-	$("#content_account").removeClass("active");
-	$("#professional").removeClass("active");
-	$("#content_professional").removeClass("active");
-
-	$(this).addClass("active");
-	$("#content_personal").addClass("active");
-});
-
-$("#cpf").mask("999-999-999-99");
-$("#dob").mask("99/99/9999");	
-$("#cep").mask("99999-999");
 $("#fix_phone").mask("(N99) 9999-9999", {
 	translation: {
 		N: {
@@ -75,9 +66,9 @@ angular.module("view").controller("viewController", function($scope){
 	};
 	$scope.error = function(user){
 		if(user && user.password && user.password_conf && !(user.password == user.password_conf)){
-			$scope.errorFlag = "has-error";
+			$scope.errorPass = "has-error";
 		} else {
-			$scope.errorFlag = "";
+			$scope.errorPass = "";
 		}
 	};
 	$scope.emailValidate = function(user){
@@ -89,5 +80,50 @@ angular.module("view").controller("viewController", function($scope){
 				$scope.errorEmail = "";
 			}
 		}
+	};
+	$scope.account_class = "active";
+	$("#back").addClass("hide");
+	$scope.active = function(data){
+		if(data == "account") {
+			$scope.account_class = "active";
+			$scope.professional_class = "";
+			$scope.personal_class = "";
+			$("#finish_footer_options").addClass("hide");
+			$("#next").removeClass("hide");
+			$("#back").addClass("hide");
+		} else if (data == "professional") {
+			$scope.account_class = "";
+			$scope.professional_class = "active";
+			$scope.personal_class = "";
+			$("#finish_footer_options").addClass("hide");
+			$("#next").removeClass("hide");
+			$("#back").removeClass("hide");
+		} else if (data == "personal") {
+			$scope.account_class = "";
+			$scope.professional_class = "";
+			$scope.personal_class = "active";
+			$("#finish_footer_options").removeClass("hide");
+			$("#next").addClass("hide");
+			$("#back").removeClass("hide");
+		}
+	};
+	$scope.next = function(){
+		if($scope.account_class == "active"){
+			$scope.active("professional");
+		} else if($scope.professional_class == "active") {
+			$scope.active('personal');
+		}
+	};
+	$scope.back = function(){
+		if($scope.professional_class == "active"){
+			$scope.active("account");
+		} else if($scope.personal_class == "active"){
+			$scope.active("professional");
+		}
+	};
+	$scope.clear = function(){
+		$scope.user = "";
+		$scope.errorEmail = "";
+		$scope.errorPass = "";
 	}
 });

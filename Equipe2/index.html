@@ -5,182 +5,195 @@
 		<link rel="stylesheet" href="style/bootstrap.min.css">
 		<link rel="stylesheet" href="style/style.css">
 	</head>
-	<body ng-controller="viewController">
-	<!-- BARRA DO TOPO DO SITE -->
-	<div class="top-bar">
-		<div class="col-md-1 col-xs-3 bar-icon">
-			<i class="fa fa-navicon clickable" id="menuButtonOpen"></i>
-		</div>
-		<div class="col-md-10 col-xs-6 bar-title">
-			EasyService
-		</div>
-		<div class="col-md-1 col-xs-3 bar-icon">
-			<i class="fa fa-sign-in clickable"></i>
-		</div>
-	</div>
-	<!-- BARRA DO TOPO DO SITE -->
-
-	<!-- MENU VERTICAL ESQUERDO -->
-	<div class="menu" id="menu">
-		<div class="menu-option" id="inicio">
-			<i class="fa fa-home icon"></i>Inicio
-		</div>
-
-		<div class="menu-option" id="dropdown-signin-button">
-			<i class="fa fa-user-plus icon"></i>Cadastrar</i>
-		</div>
-		<div class="dropdown" id="dropdown-signin">
-			<div class="dropdown-option" id="cadastrar_cliente">
-				<i class="fa fa-child icon"></i> Cliente
+		<body ng-controller="viewController">
+		<!-- BARRA DO TOPO DO SITE -->
+		<div class="top-bar">
+			<div class="col-md-1 col-xs-3 bar-icon">
+				<i class="fa fa-navicon clickable" id="menuButtonOpen"></i>
 			</div>
-			<div class="dropdown-option" id="cadastrar_prestador">
-				<i class="fa fa-paint-brush icon"></i>Prestador
+			<div class="col-md-10 col-xs-6 bar-title">
+				EasyService
+			</div>
+			<div class="col-md-1 col-xs-3 bar-icon">
+				<i class="fa fa-sign-in clickable"></i>
 			</div>
 		</div>
+		<!-- BARRA DO TOPO DO SITE -->
 
-		<div class="menu-option" id="sobre">
-			<i class="fa fa-info-circle icon"></i>Sobre
-		</div>
-	</div>
-	<!-- MENU VERTICAL ESQUERDO -->
+		<!-- MENU VERTICAL ESQUERDO -->
+		<div class="menu" id="menu">
+			<div class="menu-option" id="inicio">
+				<i class="fa fa-home icon"></i>Inicio
+			</div>
 
-	<!-- CONTEUDO -->
-	<div class="card">
-		<div class="card-head">
-			Cadastro de Prestador
-		</div>
-		<div class="card-body">
-			<ul class="nav nav-tabs">
-				<li role="presentation" class="active" id="account"><a class="clickable">Conta</a></li>
-				<li role="presentation" id="professional"><a class="clickable">Profissional</a></li>
-				<li role="presentation" id="personal"><a class="clickable">Pessoal</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane body active" id="content_account">
-					<section>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Nome</label>
-									<input type="text" class="form-control" placeholder="Informe seu nome" ng-model="user.name">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Sobrenome</label>
-									<input type="text" class="form-control" placeholder="Informe seu sobrenome" ng-model="user.surname">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-7">
-								<div class="form-group" ng-class="errorEmail">
-									<label>E-mail</label>
-									<input type="text" id="email" ng-blur="emailValidate(user)" class="form-control" placeholder="Informe um email valido" ng-model="user.email">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6" id="senha">
-								<div class="form-group" ng-class="errorFlag">
-									<label>Senha</label>
-									<input type="password" ng-change="error(user)" class="form-control" id="input_senha" placeholder="Informe uma senha" ng-model="user.password">
-								</div>
-							</div>
-							<div class="col-md-6" id="confirmar_senha">
-								<div class="form-group" ng-class="errorFlag">
-									<label>Senha *</label>
-									<input type="password" ng-change="error(user)" class="form-control" id="input_confirmar_senha" placeholder="Informe novamente a senha" ng-model="user.password_conf">
-								</div>
-							</div>
-						</div>
-					</section>
+			<div class="menu-option" id="dropdown-signin-button">
+				<i class="fa fa-user-plus icon"></i>Cadastrar</i>
+			</div>
+			<div class="dropdown" id="dropdown-signin">
+				<div class="dropdown-option" id="cadastrar_cliente">
+					<i class="fa fa-child icon"></i> Cliente
 				</div>
-				<div class="tab-pane body" id="content_professional">
-					<section>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Atua&ccedil;&atilde;o (separando por virgulas)</label>
-									<input type="text" class="form-control" placeholder="Informe areas de atua&ccedil;&atilde;o" ng-model="user.profession">
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label>Pre&ccedil;o/hora</label>
-									<input type="text" placeholder="R$ 0 000,00" id="value" class="form-control" ng-model="user.value">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-5">
-								<div class="form-group">
-									<label>Telefone Fixo</label>
-									<input type="text" placeholder="(xxx) xxxx-xxxx" class="form-control" id="fix_phone" ng-model="user.fix_phone">
-								</div>
-							</div>
-							<div class="col-md-5">
-								<div class="form-group">
-									<label>Telefone M&oacute;vel</label>
-									<input type="text" placeholder="(xxx) x xxxx-xxxx" class="form-control" id="mobile_phone" ng-model="user.mobile_phone">
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="tab-pane body" id="content_personal">
-					<section>
-						<div class="row">
-							<div class="col-md-4">
-								<div class="form-group">
-									<label>Data de Nascimento</label>
-									<input type="text" placeholder="DD/MM/YYYY" id="dob" class="form-control" ng-model="user.dob">
-								</div>
-							</div>
-							<div class="col-md-5">
-								<div class="form-group">
-									<label>CPF</label>
-									<input type="text" class="form-control" id="cpf" placeholder="XXX-XXX-XXX-XX" ng-model="user.cpf">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-7">
-								<div class="form-group">
-									<label>Endere&ccedil;o</label>
-									<input type="text" placeholder="Informe seu endere&ccedil;o" class="form-control" ng-model="user.address">
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label>CEP</label>
-									<input type="text" class="form-control" placeholder="xxxxx-xxx" id="cep" ng-model="user.cep">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-5">
-								<div class="form-group">
-									<label>Complemento</label>
-									<input type="text" placeholder="Numero, Apt, Bloco.." class="form-control" ng-model="user.complement">
-								</div>
-							</div>
-						</div>
-					</section>
+				<div class="dropdown-option" id="cadastrar_prestador">
+					<i class="fa fa-paint-brush icon"></i>Prestador
 				</div>
 			</div>
-		</div>
-		<div class="card-footer">
-			<div id="content_personal">
-				<a class="footer-button clickable" ng-click="save()" ng-disabled="disabled()">Salvar</a>
-				<a class="footer-button clickable" ng-click="save()">Cancelar</a>
+
+			<div class="menu-option" id="sobre">
+				<i class="fa fa-info-circle icon"></i>Sobre
 			</div>
 		</div>
-	</div>
-	<!-- CONTEUDO -->
+		<!-- MENU VERTICAL ESQUERDO -->
+
+		<!-- CONTEUDO -->
+		<div class="card">
+			<div class="card-head">
+				Cadastro de Prestador
+			</div>
+			<div class="card-body">
+				<ul class="nav nav-tabs">
+					<li role="presentation" ng-class="account_class" ng-click="active('account')"><a class="clickable">Conta</a></li>
+					<li role="presentation" ng-class="professional_class" ng-click="active('professional')"><a class="clickable">Profissional</a></li>
+					<li role="presentation" ng-class="personal_class" ng-click="active('personal')"><a class="clickable">Pessoal</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane body" ng-class="account_class">
+						<section>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Nome</label>
+										<input type="text" class="form-control" placeholder="Informe seu nome" ng-model="user.name">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Sobrenome</label>
+										<input type="text" class="form-control" placeholder="Informe seu sobrenome" ng-model="user.surname">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-7">
+									<div class="form-group" ng-class="errorEmail">
+										<label>E-mail</label>
+										<input type="text" id="email" ng-blur="emailValidate(user)" class="form-control" placeholder="Informe um email valido" ng-model="user.email">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6" id="senha">
+									<div class="form-group" ng-class="errorPass">
+										<label>Senha</label>
+										<input type="password" ng-blur="error(user)" class="form-control" id="input_senha" placeholder="Informe uma senha" ng-model="user.password">
+									</div>
+								</div>
+								<div class="col-md-6" id="confirmar_senha">
+									<div class="form-group" ng-class="errorPass">
+										<label>Senha *</label>
+										<input type="password" ng-blur="error(user)" class="form-control" id="input_confirmar_senha" placeholder="Informe novamente a senha" ng-model="user.password_conf">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="tab-pane body" ng-class="professional_class">
+						<section>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Atua&ccedil;&atilde;o (separando por virgulas)</label>
+										<input type="text" class="form-control" placeholder="Informe areas de atua&ccedil;&atilde;o" ng-model="user.profession">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Pre&ccedil;o/hora</label>
+										<input type="text" placeholder="R$ 0 000,00" id="value" class="form-control" ng-model="user.value">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-5">
+									<div class="form-group">
+										<label>Telefone Fixo</label>
+										<input type="text" placeholder="(xxx) xxxx-xxxx" class="form-control" id="fix_phone" ng-model="user.fix_phone">
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<label>Telefone M&oacute;vel</label>
+										<input type="text" placeholder="(xxx) x xxxx-xxxx" class="form-control" id="mobile_phone" ng-model="user.mobile_phone">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="tab-pane body" ng-class="personal_class">
+						<section>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Data de Nascimento</label>
+										<input type="text" placeholder="DD/MM/YYYY" id="dob" class="form-control" ng-model="user.dob">
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<label>CPF</label>
+										<input type="text" class="form-control" id="cpf" placeholder="XXX-XXX-XXX-XX" ng-model="user.cpf">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-7">
+									<div class="form-group">
+										<label>Endere&ccedil;o</label>
+										<input type="text" placeholder="Informe seu endere&ccedil;o" class="form-control" ng-model="user.address">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>CEP</label>
+										<input type="text" class="form-control" placeholder="xxxxx-xxx" id="cep" ng-model="user.cep">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-5">
+									<div class="form-group">
+										<label>Complemento</label>
+										<input type="text" placeholder="Numero, Apt, Bloco.." class="form-control" ng-model="user.complement">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="footer-options text-left">
+							<a class="footer-button clickable" ng-click="save()">Salvar</a>
+							<a class="footer-button clickable" ng-click="clear()">Cancelar</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="footer-options text-right">
+							<a class="footer-button clickable" ng-click="back()" id="back">Voltar</a>
+							<a class="footer-button clickable" ng-click="next()" id="next">Pr&oacute;ximo</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- CONTEUDO -->
 	</body>
+
+	<!-- SCRIPTS -->
 	<script src="style/jquery-2.1.4.min.js"></script>
 	<script src="style/angular.min.js"></script>
 	<script src="style/mask.js"></script>
 	<script src="style/script.js"></script>
+	<!-- SCRIPTS -->
 </html>
