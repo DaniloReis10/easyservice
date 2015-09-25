@@ -1,0 +1,49 @@
+ESPECIFICAÇÃO DE REQUISITOS DE SISTEMA
+
+I.INTRODUÇÃO
+
+O sistema tem por objetivo alocar prestadores de serviços domésticos a clientes cadastrados no software.O cliente especifica o tipo de serviço que deseja a data e horário. O software deverá consultar a alocação dos prestadores de serviços cadastrados para aquele serviço e disponibilidade do mesmo para a data e hora desejadas pelo cliente.
+
+
+II. REQUISITOS FUNCIONAIS
+
+
+Número
+Descrição
+Tipo
+1.0
+Cadastro dos tipos de serviços - O sistema deverá prover a funcionalidade de manter o cadastro de serviços (incluir, alterar deletar e consultar)
+Explicita
+2.0
+Cadastro dos prestadores de serviços - O sistema deverá prover a funcionalidade de manter o cadastro de prestadores de serviços (incluir, alterar deletar e consultar) e associa-los a um ou mais serviços. No cadastro dos prestadores deverá conter informações nome, endereço, CPF, RG, e-mail, telefone com DDD, qualificação profissional, data de cadastro no software e senha de acesso ao sistema ( com dupla digitacâo)l. O sistema deverá fazer o máximo de validações possíveis antes de inserir os dados no banco de dados 
+Explicita
+3.0
+Cadastro dos clientes - O sistema deverá prover a funcionalidade de manter o cadastro de clientes (incluir, alterar deletar e consultar). No cadastro de clientes deverá conter nome, endereço, telefone com DDD, e-mail, data de cadastro e senha de acesso ao sistema.
+Explicita
+4.0
+Fazer o agendamento de serviços a clientes - O Cliente deverá informar que serviço o mesmo deseja, definindo a data e horário da prestação de serviço (caso não seja especificada a data e horário o sistema deverá consultar as datas e horários mais próximos disponíveis). O sistema deverá mostra de forma ordenada (por preço e classificação) os prestadores disponíveis na data informada.
+Explicita
+5.0 
+Manter o controle de agenda dos prestadores de serviços - O sistema deverá manter o controle do agendamento dos serviços por prestadores de serviços.
+Oculta
+6.0
+Mostrar ao prestador de serviço os serviços agendados - O sistema deverá prover ao prestador de serviços um relatório de todos os serviços agendados 
+
+
+7.0
+Finalizar ordem de serviço - O cliente no término da ordem de serviço deverá informar a hora de inicio, hora de término e avaliar a qualidade do serviço prestado.
+Explicita
+8.0
+Manter controle de classificação dos prestadores de serviço - Cada prestador de serviços será avaliada de acordo com os seguintes itens:
+(Qualidade 0 - 5 Estrelas)
+(Comunicação 0-5 Estrelas)
+(Limpeza 0-5 Estrelas)
+(Preço   0-5 Estrelas)
+Explicita
+9.0
+Validação do e-mail dos prestadores de serviços e clientes - O sistema deverá fazer uma validação dos e-mail dos prestadores de serviços e dos clientes, enviando um e-mail com um link que quando acessado confirma o e-mail do usuário
+Explicita
+10.0
+Controle de acesso de usuários (Clientes e prestadores de serviços) nas funcionalidades da plataforma
+Implicita
+
