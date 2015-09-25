@@ -29,7 +29,7 @@ $("#dropdown-signin-button").click(function(){
 * Mascara para validar CPF
 * 
 **/
-$("#cpf").mask("NNN.NNN.NNN-NN", {
+$("#cpf").mask("NNN.NNN.NNN-99", {
 	translation: {
 		N: {
 			pattern: /[0-9]/, optional:false
@@ -71,10 +71,10 @@ $("#cep").mask("NNNNN-999", {
 * Mascara para validar telefone fixo
 * 
 **/
-$("#fix_phone").mask("(N99) 9999-9999", {
+$("#fix_phone").mask("(N99) NNNN-9999", {
 	translation: {
 		N: {
-			pattern: /[0-9]/, optional:false
+			pattern: /[0-9]/, optional: false
 		}
 	}
 });
@@ -84,13 +84,13 @@ $("#fix_phone").mask("(N99) 9999-9999", {
 * Mascara para validar telefone movel
 * 
 **/
-$("#mobile_phone").mask("(N99) O 9999-9999", {
+$("#mobile_phone").mask("(N99) O NNNN-9999", {
 	translation: {
 		O: {
 			pattern: /[0-9]/, optional: true
 		},
 		N: {
-			pattern: /[0-9]/, optional:false
+			pattern: /[0-9]/, optional: false
 		}
 	}
 });
@@ -133,6 +133,7 @@ angular.module("view").controller("viewController", function($scope){
 		if(user && user.email){
 			if(re.exec(user.email) === null){
 				$scope.errorEmail = "has-error";
+				window.alert("Informe um e-mail valido!");
 			} else{
 				$scope.errorEmail = "";
 			}
