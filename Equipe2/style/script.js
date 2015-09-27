@@ -42,7 +42,7 @@ $("#cpf").mask("NNN.NNN.NNN-99", {
 * Mascara para validar data de nascimento
 * 
 **/
-$("#dob").mask("NO/NO/9999", {
+$("#datePickerValue").mask("NO/NO/9999", {
 	translation: {
 		N: {
 			pattern: /[0-9]/, optional: false
@@ -214,6 +214,14 @@ angular.module("view").controller("viewController", function($scope){
 		$scope.errorPass = "";
 	}
 
+	/**
+	* 
+	* Exibe o datePicker
+	* 
+	**/
+	$("#showCalendar").on('click', function(){
+		$(".dob").toggle(300);
+	});
 
 	/**
 	* 
@@ -227,4 +235,12 @@ angular.module("view").controller("viewController", function($scope){
 		}
 		console.log($scope.user);
 	}
+
+	$('#dob').DatePicker({
+		flat: true,
+		date: '2008-07-31',
+		current: '2008-07-31',
+		calendars: 1,
+		starts: 1
+	});
 });
