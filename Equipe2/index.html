@@ -116,13 +116,13 @@
 							</div>
 							<div class="row">
 								<div class="col-md-5">
-									<div class="form-group">
+									<div class="form-group fix_phone_error">
 										<label>Telefone Fixo</label>
 										<input type="text" placeholder="(xxx) xxxx-xxxx" class="form-control" id="fix_phone" ng-model="user.fix_phone">
 									</div>
 								</div>
 								<div class="col-md-5">
-									<div class="form-group">
+									<div class="form-group mobile_phone_error">
 										<label>Telefone Móvel</label>
 										<input type="text" placeholder="(xxx) x xxxx-xxxx" class="form-control" id="mobile_phone" ng-model="user.mobile_phone">
 									</div>
@@ -137,7 +137,7 @@
 									<div class="form-group">
 										<label>Data de Nascimento</label>
 										<div class="input-group">
-											<input type="text" id="datePickerValue" class="form-control" placeholder="dd/mm/aaaa">
+											<input type="text" id="datePickerValue" class="form-control" placeholder="Utilize o icone ao lado" disabled>
 											<div class="input-group-addon addon-preferences clickable" id="showCalendar"><i class="fa fa-calendar"></i></div>
 										</div>
 										<input type="hidden" id="datePickerHideValue">
@@ -152,7 +152,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-7">
+								<div class="col-md-8">
 									<div class="form-group">
 										<label>Endereço</label>
 										<input type="text" placeholder="Informe seu endereço" class="form-control" ng-model="user.address">
@@ -166,7 +166,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-5">
+								<div class="col-md-12">
 									<div class="form-group">
 										<label>Complemento</label>
 										<input type="text" placeholder="Numero, Apt, Bloco.." class="form-control" ng-model="user.complement">

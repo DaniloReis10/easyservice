@@ -66,6 +66,9 @@ $("#cep").mask("NNNNN-999", {
 	}
 });
 
+
+var phone_alert = "Numero de telefone inválido!";
+
 /**
 * 
 * Mascara para validar telefone fixo
@@ -76,6 +79,13 @@ $("#fix_phone").mask("(N99) NNNN-9999", {
 		N: {
 			pattern: /[0-9]/, optional: false
 		}
+	}
+}).blur(function(){
+	if($(this).val().length < 15){
+		$(".fix_phone_error").addClass("has-error");
+		window.alert(phone_alert);
+	} else{
+		$(".fix_phone_error").removeClass("has-error");
 	}
 });
 
@@ -92,6 +102,13 @@ $("#mobile_phone").mask("(N99) O NNNN-9999", {
 		N: {
 			pattern: /[0-9]/, optional: false
 		}
+	}
+}).blur(function(){
+	if($(this).val().length < 16){
+		$(".mobile_phone_error").addClass("has-error");
+		window.alert(phone_alert);
+	} else{
+		$(".mobile_phone_error").removeClass("has-error");
 	}
 });
 
@@ -118,6 +135,7 @@ angular.module("view").controller("viewController", function($scope){
 	$scope.error = function(user){
 		if(user && user.password && user.password_conf && !(user.password == user.password_conf)){
 			$scope.errorPass = "has-error";
+			window.alert("As senhas informadas são diferentes!");
 		} else {
 			$scope.errorPass = "";
 		}
@@ -220,7 +238,7 @@ angular.module("view").controller("viewController", function($scope){
 	* 
 	**/
 	$("#showCalendar").on('click', function(){
-		$(".dob").toggle(300);
+		$("#dob").toggle(300);
 	});
 
 	/**
