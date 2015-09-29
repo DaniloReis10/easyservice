@@ -1,3 +1,33 @@
+var latitude, longitude;
+function success(position){
+	latitude = position.coords.latitude;
+	longitude = position.coords.longitude;
+	console.log(latitude+" - "+longitude);
+};
+function error(val){
+	console.log(val);
+};
+
+function getLocation(){
+	if (navigator.geolocation) {
+	    navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+	    window.alert("Geolocation is not supported by this browser.");
+	}
+}
+getLocation;
+
+var map;
+function initMap() {
+	var current = new google.maps.LatLng(latitude, longitude);
+	var mapEl = document.getElementById('map');
+	map = new google.maps.Map(mapEl, {
+		center: current,
+		zoom: 20
+	});
+	mapEl.style.height = "300px";
+}
+
 /**
 * 
 * Inicializa a variavel status como 'closed' para
