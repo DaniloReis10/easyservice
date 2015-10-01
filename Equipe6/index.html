@@ -80,7 +80,6 @@
         qtde = $('#qtde').val()
         if (!$.isNumeric($("#qtde").val())) {
           $(this).attr("style", "border: 1px solid red")
-          cont++;
         } else {
           $(this).attr("style", "border: 1px solid green")
         }
@@ -92,12 +91,19 @@
           $(this).attr("style", "border: 1px solid green")
         } else {
           $(this).attr("style", "border: 1px solid red")
-          cont++;
         }
       })
 
       $('form').submit(function(e) {
         e.preventDefault();
+        
+        if (!$.isNumeric($("#qtde").val())) {
+          cont++
+        }
+        if (!ser) {
+          cont++;
+        }
+
         if (cont) {
           alert("Você não preencheu os campos corretamente!");
           cont = 0;
