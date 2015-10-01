@@ -1,0 +1,117 @@
+
+			.container1 {
+				padding: 10px;
+				width:700px;
+				height:520px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				
+			}
+			
+			.container {
+				padding: 5px;
+				width:700px;
+				height:390px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				
+				background-color: #EEE8AA;
+				
+			}
+			
+			form {
+				
+			}
+			
+			.table1 {
+				width: 700px;
+				border: 3px solid #FFF8DC;
+				font-family: "Colibri", "Comic Sans", "Arial";
+				background-color: #EEE8AA;
+			}						
+			.le {
+				width: 33%;
+				height: 40px;
+				padding-right: 10px;
+				text-align: right;
+			}
+			.ld {
+				width: 67%;
+				height: 40px;
+				padding-left: 10px;
+			}
+			th {
+				font-size: 26px;
+				width: 100%;
+				height: 50px;
+				border: 1px solid #FFF8DC;
+				background-color: #EEDD82;
+			}
+			td {
+				font-size: 18px;
+			}
+			
+			.table2 td {
+				text-align: center;
+				font-size: 14px;
+				//border: 1px solid #AFEEEE;
+			}
+			.table2 input {
+				width: 125px;	
+			}
+			.le2 {
+				width: 15%;
+			}
+			.ld2 {
+				width: 35%;
+				
+			}
+			.table2 option {
+				
+			}
+			
+			.botao {
+				width: 80px;
+				height: 36px;								
+			}
+			
+			form .botaop {
+				width: 65px;
+				height: 26px;
+				font-size: 12px;
+			}
+			
+			.lc {
+				width: 100%;
+				height: 50px;
+				text-align: center;
+			}
+			
+			.lcp {
+				width: 100%;
+				height: 40px;
+				text-align: center;
+				font-size: 12px;
+			}
+			
+			#q01p {
+				display: none;
+			}
+			
+			form .textOS {
+				width: 70px;
+				height: 25px;
+			}
+			
+			form select {
+				width: 200px;
+				height: 25px;
+			}
