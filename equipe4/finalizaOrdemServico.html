@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Processing forms with events</title>
+		<script type="text/javascript" src="jscriptf.js"></script>
+    </head>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<!-- http://tableless.com.br/centralizando-um-objeto-na-horizontal-e-vertical-com-css/ -->
+
+    <body onload="carregaOS()">  
+    <div class="container1">  
+		<form>
+        <table class="table1">
+			<tr>
+				<th colspan="2">Finaliza Ordem de Serviço</th>
+			</tr>
+			<tr>
+				<td class="le">OS</td> 
+				<td class="ld">
+					<select id="OS">
+						<option >Selecione uma OS</option>					
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="le">Comando</td>
+				<td class="ld"> 
+					<input class="botaop" type="button" value="Finalizar" onclick="finalizaOS()">	
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					<input class="botaop" type="button" value="Cancelar" onclick="cancelaOS()">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="lcp">
+					<div id="q01p">
+						<h3>Questionário</h3>
+						<h4>1 - Qualidade do Seviço:</h4>
+						<input type="radio" name="r101" value="ms"/> Muito Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r102" value="s"/> Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r103" value="r"/> Razoável &nbsp; &nbsp;
+						<input type="radio" name="r104" value="i"/> Insatisfeito &nbsp; &nbsp;
+						<h4>2 - Pontualidade:</h4>
+						<input type="radio" name="r201" value="ms"/> Muito Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r202" value="s"/> Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r203" value="r"/> Razoável &nbsp; &nbsp;
+						<input type="radio" name="r204" value="i"/> Insatisfeito &nbsp; &nbsp;
+						<h4>3 - Cordialidade:</h4>
+						<input type="radio" name="r201" value="ms"/> Muito Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r202" value="s"/> Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r203" value="r"/> Razoável &nbsp; &nbsp;
+						<input type="radio" name="r204" value="i"/> Insatisfeito &nbsp; &nbsp;
+						<h4>3 - Preço:</h4>
+						<input type="radio" name="r201" value="ms"/> Muito Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r202" value="s"/> Satisfeito &nbsp; &nbsp;
+						<input type="radio" name="r203" value="r"/> Razoável &nbsp; &nbsp;
+						<input type="radio" name="r204" value="i"/> Insatisfeito &nbsp; &nbsp;
+						<h4>Observação:</h4>
+						<textarea rows="2" cols="50" id="tarea"></textarea>
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" class="lc">
+					<input class="botao" type="submit" value="Salvar" onclick="salvar()">
+					 &nbsp; &nbsp; &nbsp; &nbsp;
+					<input class="botao" type="submit" value="Cancelar" onclick="cancelar()">
+				</td>
+			</tr>
+		</table>
+		</form>  
+        
+    </div> 
+    <script type="text/javascript" src="jscript.js"></script> 
+	
+    </body>
+</html>
