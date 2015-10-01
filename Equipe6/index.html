@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trabalho</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center" id="contenttitle">
+        <h1 id="titulo">trabalho</h1>
+        <p id="desc">Equipe: Matheus Loureiro e Felipe Ribeiro</p>
+      </div>
+      <div class="col-md-6 margin">
+        <form action="#" id="enviarservico" method="POST">
+          <div class="form-group col-md-6">
+            <label>Serviço:</label>
+            <input type="text" class="form-control" id="ser">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Quantidade:</label>
+            <input type="text" class="form-control" id="qtde" name="qtde">
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-default">Enviar</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6 margin">
+        <p>Aqui você poderá verificar e adicionar os serviços juntamente com a quantidade <br><br> Ao lado, você verá o formulário intuitivo para inserção de algum <strong>dado</strong> e abaixo contém um <strong>gráfico</strong> e uma <strong>tabela</strong> com o somatório e filtragem mensal.</p>
+      </div>
+      <div class="col-md-12 margin">
+        <h2 class="titulo">Gráfico</h2>
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      </div>
+      <div class="col-md-12 margin">
+        <h2 class="titulo">Tabela</h2>
+        <div class="col-md-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Serviço</th>
+                <th>Quantidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pedreiros</td>
+                <td>889</td>
+              </tr>
+              <tr>
+                <td>Pintores</td>
+                <td>527</td>
+              </tr>
+              <tr>
+                <td>Marceneiros</td>
+                <td>557</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script>
+
+    $(document).ready(function() {
+      var qtde;
+      var ser;
+      var cont = 0;
+
+      $('#qtde').blur(function() {
+        qtde = $('#qtde').val()
+        if (!$.isNumeric($("#qtde").val())) {
+          $(this).attr("style", "border: 1px solid red")
+          cont++;
+        } else {
+          $(this).attr("style", "border: 1px solid green")
+        }
+      })
+
+      $('#ser').blur(function() {
+        ser = $('#ser').val()
+        if (ser) {
+          $(this).attr("style", "border: 1px solid green")
+        } else {
+          $(this).attr("style", "border: 1px solid red")
+          cont++;
+        }
+      })
+
+      $('form').submit(function(e) {
+        e.preventDefault();
+        if (cont) {
+          alert("Você não preencheu os campos corretamente!");
+          cont = 0;
+        } else {
+          $('input').val('')
+        }
+      });
+    })
+
+  $(function() {
+    $('#container').highcharts({
+      title: {
+        text: '',
+        x: -20 //center
+      },
+      xAxis: {
+        categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+      },
+      yAxis: {
+        title: {
+            text: 'Serviços'
+        },
+        plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+        }]
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+      },
+      series: [{
+        name: 'Pedreiros',
+        data: [50, 60, 90, 100, 150, 20, 234, 20, 10, 5, 50, 100]
+      }, {
+        name: 'Pintores',
+        data: [40, 20, 10, 50, 110, 45, 22, 29, 43, 55, 43, 60]
+      }, {
+        name: 'Marceneiros',
+        data: [20, 10, 110, 26, 29, 140, 10, 5, 10, 40, 67, 90]
+      }],
+      credits: {
+        enabled: false
+      },
+      chart: {
+        backgroundColor: 'transparent'
+      }
+    });
+  });
+  </script>
+</body>
+</html>

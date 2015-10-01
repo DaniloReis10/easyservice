@@ -1,0 +1,25 @@
+body {
+  background:#F0F0F0;
+}
+
+#titulo {
+  font-size:20rem;
+  color:#e1e1e1;
+  font-weight:300;
+}
+#desc {
+  color:#C3BFBF;
+  font-size:2rem;
+}
+.titulo {
+  font-size:15rem;
+  color:#EAEAEA;
+  font-weight:300;
+  margin-bottom:-70px;
+}
+#contenttitle {
+  margin-bottom:10rem;
+}
+.margin {
+  margin-bottom:3rem;
+}
