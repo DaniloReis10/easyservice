@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Processing forms with events</title>
+		<script type="text/javascript" src="jscript.js"></script>
+    </head>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<!-- http://tableless.com.br/centralizando-um-objeto-na-horizontal-e-vertical-com-css/ -->
+
+    <body onload="carregaServico()">  
+    <div class="container">  
+		<form>
+        <table class="table1">
+			<tr>
+				<th colspan="2">Criar Ordem de Serviço</th>
+			</tr>
+			<tr>
+				<td class="le">OS</td> 
+				<td class="ld">
+					<input class="textOS" type="text" id="os" disabled>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+					<input class="botaop" type="button" value="Novo" onclick="limpaCampos()">
+				</td>
+			</tr>
+			<tr>
+				<td class="le">Serviço</td>
+				<td class="ld"> 
+					<select id="servico">
+						<option >Selecione um Serviço</option>					
+					</select>					
+				</td>
+			</tr>
+			<tr>
+				<td class="le">Agendamento</td>
+				<td class="ld">
+					<table class="table2">
+						<tr>
+							<td class="le2">Inicio</td>
+							<td class="ld2"><input type="date" id="di" value="2015-10-01"></td>
+							<td class="le2">Final</td>
+							<td class="ld2"><input type="date" id="df" value="2015-10-31"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="le">Profissional</td>
+				<td class="ld">
+					<select id="profissional">
+						<option >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						</option>					
+					</select>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+					<input class="botaop" type="button" value="Carregar" onclick="carregaProfissionais()">
+				</td>
+			</tr>
+			<tr>
+				<td class="le">
+					
+				</td>
+				<td class="ld">
+					<p id="data_i"></p>
+					<p id="data_f"></p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="lc">
+					<input class="botao" type="submit" value="Salvar" onclick="salvar()">
+					 &nbsp; &nbsp; &nbsp; &nbsp;
+					<input class="botao" type="submit" value="Cancelar" onclick="cancelar()">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="lc">
+					
+				</td>
+			</tr>
+		</table>
+		</form>  
+        <!-- <button id="button" type="button">Greet me, please!</button>
+        <div id="message"></div>  -->
+    </div> 
+    <script type="text/javascript" src="jscript.js"></script> 
+	
+
+    </body>
+</html>
