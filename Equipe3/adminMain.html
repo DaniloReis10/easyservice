@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Service</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <!-- Latest compiled and minified CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Optional theme -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="time.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+
+
+<style type="text/css">
+@import url("adminEasyService.css");
+@import url("rankingStars.css");
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  background-color: #FFF;
+  width: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+#name
+{
+  margin: auto;
+}
+
+#ranking
+{
+  text-align: center;
+  vertical-align: center;
+}
+
+</style>
+
+</head>
+<body onLoad="getDateTime()">
+  <header class="bg-primary">
+    <h1 id="name">Easy Service</h1>
+  </header>
+  <nav>
+<ul>
+  <li><a href="">Inicio</a></li>
+  <li><a href="adminListarClientes.html">Clientes</a></li>
+  <li><a href="adminListarPrestadores.html">Prestadores de Serviços</a></li>
+  <li><a href="">Configurações</a></li>
+  <li><a href="adminLogin.html">Sair</a></li>
+</ul>
+</nav>
+  <section>
+    <h2>Menu Principal</h2>
+    <article>
+      <h2>Seja Bem Vindo</h2>
+      <div class="row">
+  <div class="col-sm-2"><label id="nameAdmin">Eric Costa Hall</label></div>
+  <div class="col-sm-8"></div>
+  <div class="col-sm-2"><label id="time"></label></div>
+</div>
+    </article>
+  </section>
+  <footer class="bg-primary">
+    <p>&copy; 2015 Easy Sevice. Todos os direitos Reservados.</p>
+  </footer>
+</body>
+</html>

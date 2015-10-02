@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Service</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <!-- Latest compiled and minified CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+
+<style type="text/css">
+@import url("adminEasyService.css");
+@import url("rankingStars.css");
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  background-color: #FFF;
+  width: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+#name
+{
+  margin: auto;
+}
+
+#ranking
+{
+  text-align: center;
+  vertical-align: center;
+}
+
+</style>
+
+</head>
+<body>
+  <header class="bg-primary">
+    <h1 id="name">Easy Service</h1>
+  </header>
+  <section>
+    <h2>Ranking Prestadores de Serviço</h2>
+    <article>
+      <h2>Prestadores de Serviço</h2>
+      <div class="container">           
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Serviço</th>
+              <th id="ranking">Ranking</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Bombeiro</td>
+              <td><form id="ratingsForm">
+                <div class="stars">
+                  <input type="radio" name="star" class="star-1" id="star_0_1" />
+                  <label class="star-1" for="star_0_1">1</label>
+                  <input type="radio" name="star" class="star-2" id="star_0_2" />
+                  <label class="star-2" for="star_0_2">2</label>
+                  <input type="radio" name="star" class="star-3" id="star_0_3" />
+                  <label class="star-3" for="star_0_3">3</label>
+                  <input type="radio" name="star" class="star-4" id="star_0_4" />
+                  <label class="star-4" for="star_0_4">4</label>
+                  <input type="radio" name="star" class="star-5" id="star_0_5" />
+                  <label class="star-5" for="star_0_5">5</label>
+                  <span></span>
+                </div>
+              </form></td>
+            </tr>
+            <tr>
+              <td>Lucas</td>
+              <td>Pedreiro</td>
+              <td><form id="ratingsForm">
+                <div class="stars">
+                  <input type="radio" name="star" class="star-1" id="star_1_1" />
+                  <label class="star-1" for="star_1_1">1</label>
+                  <input type="radio" name="star" class="star-2" id="star_1_2" />
+                  <label class="star-2" for="star_1_2">2</label>
+                  <input type="radio" name="star" class="star-3" id="star_1_3" />
+                  <label class="star-3" for="star_1_3">3</label>
+                  <input type="radio" name="star" class="star-4" id="star_1_4" />
+                  <label class="star-4" for="star_1_4">4</label>
+                  <input type="radio" name="star" class="star-5" id="star_1_5" />
+                  <label class="star-5" for="star_1_5">5</label>
+                  <span></span>
+                </div>
+              </form></td>
+            </tr>
+            <tr>
+              <td>Antônio</td>
+              <td>Desentupidor</td>
+              <td><form id="ratingsForm">
+                <div class="stars">
+                  <input type="radio" name="star" class="star-1" id="star_2_1" />
+                  <label class="star-1" for="star_2_1">1</label>
+                  <input type="radio" name="star" class="star-2" id="star_2_2" />
+                  <label class="star-2" for="star_2_2">2</label>
+                  <input type="radio" name="star" class="star-3" id="star_2_3" />
+                  <label class="star-3" for="star_2_3">3</label>
+                  <input type="radio" name="star" class="star-4" id="star_2_4" />
+                  <label class="star-4" for="star_2_4">4</label>
+                  <input type="radio" name="star" class="star-5" id="star_2_5" />
+                  <label class="star-5" for="star_2_5">5</label>
+                  <span></span>
+                </div>
+              </form></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </article>
+  </section>
+  <footer class="bg-primary">
+    <p>&copy; 2015 Easy Sevice. Todos os direitos Reservados.</p>
+  </footer>
+</body>
+</html>

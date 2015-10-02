@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Service</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/functionsServidor.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+
+<style type="text/css">
+@import url("adminEasyService.css");
+@import url("rankingStars.css");
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  background-color: #FFF;
+  width: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+#name
+{
+  margin: auto;
+}
+
+#ranking
+{
+  text-align: center;
+  vertical-align: center;
+}
+
+.ng-invalid{
+    border: 1px solid red;
+}
+</style>
+
+</head>
+<body>
+  <header class="bg-primary">
+    <h1 id="name">Easy Service</h1>
+  </header>
+    <nav>
+<ul>
+  <li><a href="adminMain.html">Inicio</a></li>
+  <li><a href="adminListarClientes.html">Clientes</a></li>
+  <li><a href="adminListarPrestadores.html">Prestadores de Serviços</a></li>
+  <li><a href="">Configurações</a></li>
+  <li><a href="adminLogin.html">Sair</a></li>
+</ul>
+</nav>
+  <section>
+    <h2>Prestadores de Serviços</h2>
+    <article>
+      <h2>Prestadores</h2>
+      <div class="container">           
+        <table class="table table-striped" id="tblCadastro">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Telefone</th>
+              <th>Serviço</th>
+              <th>NºCarteira de Trabalho</th>
+              <th id="ranking">Avaliação</th>
+              <th>Alterar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Walter</td>
+              <td>931.222.134.00</td>
+              <td>(85)9988776655</td>
+              <td>Bombeiro</td>
+              <td>80123349-00</td>
+              <td><form id="ratingsForm">
+                <div class="stars">
+                  <input type="radio" name="star" class="star-1" id="star_0_1" />
+                  <label class="star-1" for="star_0_1">1</label>
+                  <input type="radio" name="star" class="star-2" id="star_0_2" />
+                  <label class="star-2" for="star_0_2">2</label>
+                  <input type="radio" name="star" class="star-3" id="star_0_3" />
+                  <label class="star-3" for="star_0_3">3</label>
+                  <input type="radio" name="star" class="star-4" id="star_0_4" />
+                  <label class="star-4" for="star_0_4">4</label>
+                  <input type="radio" name="star" class="star-5" id="star_0_5" />
+                  <label class="star-5" for="star_0_5">5</label>
+                  <span></span>
+                </div>
+              </form></td>
+              <td><img src="images/delete.png" class="btnExcluir"/><img src="images/pencil.png" class="btnEditar"/></td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="btnAdicionar" class="btn btn-primary btn-md">Novo Prestador</button>
+      </div>
+
+    </article>
+  </section>
+  <footer class="bg-primary">
+    <p>&copy; 2015 Easy Sevice. Todos os direitos Reservados.</p>
+  </footer>
+</body>
+</html>
