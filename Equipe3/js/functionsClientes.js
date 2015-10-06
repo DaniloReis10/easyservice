@@ -25,17 +25,16 @@ $(function()
 	function Editar()
 	{
 		var par = $(this).parent().parent(); // tr
-		var tdNome = par.children("td:nth-child(1)");
-		var tdEmail = par.children("td:nth-child(2)");
-		var tdCpf = par.children("td:nth-child(3)");
-		var tdTel = par.children("td:nth-child(4)");
-		var tdEndereco = par.children("td:nth-child(5)");
-		var tdCep = par.children("td:nth-child(6)");
-		var tdNumero = par.children("td:nth-child(7)");
+		var tdNome = par.children(":nth-child(1)").children();
+		var tdEmail = par.children(":nth-child(2)").children();
+		var tdCpf = par.children(":nth-child(3)").children();
+		var tdTel = par.children(":nth-child(4)").children();
+		var tdEndereco = par.children(":nth-child(5)").children();
+		var tdCep = par.children(":nth-child(6)").children();
+		var tdNumero = par.children(":nth-child(7)").children();
 		var tdBotoes = par.children("td:nth-child(8)");
 
-		tdNome.html("<input type='text' id='tdNome' value='" + tdNome.html()
-				+ "' size='16'/>");
+		tdNome.html("<input type='text' size='16' name='nome"+index+"'/>");
 		tdEmail.html("<input type='text' id='tdEmail' value='" + tdEmail.html()
 				+ "' size='16'/>");
 		tdCpf.html("<input type='text' id='tdCpf' value='" + tdCpf.html()
@@ -59,13 +58,13 @@ $(function()
 	function Salvar()
 	{
 		var par = $(this).parent().parent(); // tr
-		var tdNome = par.children("td:nth-child(1)");
-		var tdEmail = par.children("td:nth-child(2)");
-		var tdCpf = par.children("td:nth-child(3)");
-		var tdTel = par.children("td:nth-child(4)");
-		var tdEndereco = par.children("td:nth-child(5)");
-		var tdCep = par.children("td:nth-child(6)");
-		var tdNumero = par.children("td:nth-child(7)");
+		var tdNome = par.children(":nth-child(1)").children();
+		var tdEmail = par.children(":nth-child(2)").children();
+		var tdCpf = par.children(":nth-child(3)").children();
+		var tdTel = par.children(":nth-child(4)").children();
+		var tdEndereco = par.children(":nth-child(5)").children();
+		var tdCep = par.children(":nth-child(6)").children();
+		var tdNumero = par.children(":nth-child(7)").children();
 		var tdBotoes = par.children("td:nth-child(8)");
 
 		tdNome.html(tdNome.children("input[type=text]").val());
@@ -87,6 +86,7 @@ $(function()
 	{
 		var par = $(this).parent().parent(); // tr
 		par.remove();
+		index--;
 	}
 	;
 
