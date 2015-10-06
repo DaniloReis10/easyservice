@@ -11,14 +11,23 @@
 <!-- Latest compiled and minified CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+<!-- Table JavaScript -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/mountable.js"></script>
+
 <script type="text/javascript" src="js/functionsClientes.js"></script>
 <script type="text/javascript" src="js/validationFunctions.js"></script>
 
 
+
+<style>
+.table {
+	margin-bottom: 0;
+}
+</style>
 <style type="text/css">
 @import url("css/adminEasyService.css");
 
@@ -71,36 +80,48 @@ body {
 		<article>
 			<h2>Clientes Cadastrados</h2>
 			<div class="container">
-				<div class="table-responsive">
-					<table class="table table-striped" id="tblCadastro">
-						<thead>
-							<tr>
-								<th>Nome</th>
-								<th>Email</th>
-								<th>CPF</th>
-								<th>Telefone</th>
-								<th>Endereço</th>
-								<th>CEP</th>
-								<th>Número</th>
-								<th>Alterar</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>John Walter</td>
-								<td>johnwalter@gmail.com</td>
-								<td>931.222.134.00</td>
-								<td>(85)9988776655</td>
-								<td>Av. Abolição</td>
-								<td>80123349-00</td>
-								<td>1002</td>
-								<td><img src="images/delete.png" class="btnExcluir" /><img
-									src="images/pencil.png" class="btnEditar" /></td>
-							</tr>
-						</tbody>
-					</table>
-					<button id="btnAdicionar" class="btn btn-primary btn-md">Novo
-						Cliente</button>
+				<div class="well">
+					<form action="#">
+						<table class="table" id="example2">
+							<thead>
+								<tr>
+									<th style="width: 10%;">#</th>
+									<th>Nome</th>
+									<th>Email</th>
+									<th>CPF</th>
+									<th>Telefone</th>
+									<th>Endereço</th>
+									<th>CEP</th>
+									<th>Número</th>
+									<th>&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="mountable-model">
+									<td><input type="text" name="index[]"
+										class="form-control"></td>
+									<td><input type="text" name="nome[]" class="form-control"></td>
+									<td><input type="text" name="email[]" class="form-control"></td>
+									<td><input type="text" name="cpf[]" class="form-control"></td>
+									<td><input type="text" name="telefone[]"
+										class="form-control"></td>
+									<td><input type="text" name="endereco[]"
+										class="form-control"></td>
+									<td><input type="text" name="cep[]" class="form-control"></td>
+									<td><input type="text" name="numero[]"
+										class="form-control"></td>
+									<td><button type="button"
+											class="btn btn-default mountable-remove-line-2">Remover</button></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="3"><button type="button"
+											class="btn btn-default" id="button2">Adicionar Novo</button></td>
+								</tr>
+							</tfoot>
+						</table>
+					</form>
 				</div>
 			</div>
 
@@ -110,4 +131,8 @@ body {
 		<p>&copy; 2015 Easy Sevice. Todos os direitos Reservados.</p>
 	</footer>
 </body>
+
+
 </html>
+
+
