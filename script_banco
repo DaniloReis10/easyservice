@@ -1,0 +1,221 @@
+/*
+Created		21/4/2014
+Modified		21/4/2014
+Project		
+Model			
+Company		
+Author		
+Version		
+Database		MS SQL 2005 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Drop table [AgendaServicos] 
+go
+Drop table [ServicosPrestador] 
+go
+Drop table [Servicos] 
+go
+Drop table [PrestadorServicos] 
+go
+Drop table [Cliente] 
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create table [Cliente]
+(
+	[cli_id] Integer NOT NULL,
+	[cli_nome] Varchar(100) NOT NULL,
+	[cli_email] Varchar(50) NOT NULL,
+	[cli_password] Varchar(50) NULL,
+	[cli_telefone] Varchar(15) NOT NULL,
+	[cli_endereco] Varchar(100) NOT NULL,
+	[cli_complemento] Varchar(50) NULL,
+	[cli_bairro] Varchar(50) NULL,
+	[cli_cidade] Varchar(50) NOT NULL,
+	[cli_estado] Varchar(20) NULL,
+	[cli_cep] Varchar(15) NULL,
+Primary Key ([cli_id])
+) 
+go
+
+Create table [PrestadorServicos]
+(
+	[prs_id] Integer NOT NULL,
+	[prs_nome] Varchar(100) NOT NULL,
+	[prs_email] Varchar(50) NOT NULL,
+	[prs_password] Varchar(50) NOT NULL,
+	[prs_telefone] Varchar(15) NULL,
+Primary Key ([prs_id])
+) 
+go
+
+Create table [Servicos]
+(
+	[ser_id] Integer NOT NULL,
+	[ser_descricao] Varchar(50) NULL,
+	[ser_preco_hora] Money NULL,
+	[ser_min_horas] Integer NULL,
+Primary Key ([ser_id])
+) 
+go
+
+Create table [ServicosPrestador]
+(
+	[ser_id] Integer NOT NULL,
+	[prs_id] Integer NOT NULL,
+Primary Key ([ser_id],[prs_id])
+) 
+go
+
+Create table [AgendaServicos]
+(
+	[agd_id] Integer NOT NULL,
+	[cli_id] Integer NOT NULL,
+	[prs_id] Integer NOT NULL,
+	[ser_id] Integer NOT NULL,
+	[agd_datetime] Datetime NOT NULL,
+	[agd_duracao] Integer NULL,
+	[agd_status] Char(1) NULL,
+	[agd_preco_hora] Money NULL,
+	[agd_precoTotal] Money NULL,
+	[agd_avaliacao_qualidade] Integer NULL,
+	[agd_avaliacao_comunicacao] Integer NULL,
+	[agd_avaliacao_limpeza] Integer NULL,
+Primary Key ([agd_id],[cli_id],[prs_id],[ser_id])
+) 
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alter table [AgendaServicos] add  foreign key([cli_id]) references [Cliente] ([cli_id])  on update no action on delete no action 
+go
+Alter table [ServicosPrestador] add  foreign key([prs_id]) references [PrestadorServicos] ([prs_id])  on update no action on delete no action 
+go
+Alter table [AgendaServicos] add  foreign key([prs_id]) references [PrestadorServicos] ([prs_id])  on update no action on delete no action 
+go
+Alter table [ServicosPrestador] add  foreign key([ser_id]) references [Servicos] ([ser_id])  on update no action on delete no action 
+go
+Alter table [AgendaServicos] add  foreign key([ser_id]) references [Servicos] ([ser_id])  on update no action on delete no action 
+go
+
+
+Set quoted_identifier on
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Set quoted_identifier off
+go
+
+
+
+
+
+
+
+
+
+
+
+/* Roles permissions */
+
+
+
+
+
+/* Users permissions */
+
+
+
+
+
+
