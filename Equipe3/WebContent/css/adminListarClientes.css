@@ -1,0 +1,54 @@
+@CHARSET "ISO-8859-1";
+
+.table {
+	margin-bottom: 0;
+}
+
+body {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	background-color: #FFF;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+	margin: auto;
+}
+
+#ranking {
+	text-align: center;
+	vertical-align: center;
+}
+
+.container {
+	overflow: auto;
+}
+
+.sizeInput {
+	width: 4px;
+}
+
+option
+{
+color: black;
+}
+
+select
+{
+color: black;
+}
+
+.rating {
+	/* height of full star is the same, we won't specify width here */
+	height: 16px;
+	/* background image with stars */
+	background: url(images/stars.png);
+	/* now we will position background image to use 16px from top, 
+    //which means use full stars */
+	background-position: 0 -16px;
+	/* and repeat them horizontally */
+	background-repeat: repeat-x;
+}
+}
