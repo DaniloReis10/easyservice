@@ -1,0 +1,93 @@
+.top-bar {
+	border-radius:0px;
+	background-color:#0d47a1;
+	height:45px;
+	color:#FFF;
+	padding-top:9px;
+}
+.clickable{
+	cursor:pointer;
+}
+.bar-title, .bar-icon {
+	text-align: center;
+}
+.bar-title {
+	font-size:20px;
+}
+.bar-icon {
+	font-size:25px;
+}
+.menu {
+	position:fixed;
+	background-color:#e3f2fd;
+	width:16.33%;
+	height:100%;
+	left:-16.33%;
+	border-right:1px solid #666;
+}
+.menu-option {
+	height:40px;
+	font-size: 16px;
+	padding-top:8px;
+	padding-left:15px;
+}
+.menu-option:hover {
+	background-color: #90caf9;
+	cursor:pointer;
+	font-weight:bold;
+}
+.icon {
+	margin-right:10px;
+}
+.dropdown {
+	display:none;
+}
+.dropdown-option {
+	height:30px;
+	font-size:16px;
+	padding-top:3px;
+	padding-left:20%;
+}
+.dropdown-option:hover {
+	background-color:#64b5f6;
+	cursor: pointer;
+}
+#menuButtonClose {
+	display: none;
+}
+.card {
+	width:66.64%;
+	margin-left:16.66%;
+	margin-top:20px;
+	box-shadow:0px 2px 3px #666;
+}
+.card-head {
+	background-color: #0d47a1;
+	color:#FFF;
+	padding: 15px;
+	font-size: 29px;
+}
+.card-body {
+	padding:10px;
+}
+.card-footer {
+	border-top: 1px solid #ccc;
+	padding: 15px;
+}
+.footer-button {
+	font-size:16px;
+	color:#64b5f6;
+	font-weight: bold;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.footer-button:hover{
+	color:#0d47a1;
+	text-decoration: none;
+}
+.footer-options {
+	width:100%;
+}
+div.body {
+	padding-top: 15px;
+}

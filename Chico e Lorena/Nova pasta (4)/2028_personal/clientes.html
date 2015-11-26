@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Personal HTML Template</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--
+Template 2028 Personal
+http://www.tooplate.com/view/2028-personal
+-->
+<link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery.lightbox-0.5.css" rel="stylesheet" type="text/css" media="screen" /> 
+
+
+
+<script type="text/javascript">
+
+
+function mascara(t, mask){
+ var i = t.value.length;
+ var saida = mask.substring(1,0);
+ var texto = mask.substring(i)
+ if (texto.substring(0,1) != saida){
+ t.value += texto.substring(0,1);
+ }
+ }
+
+ function ValidaSemPreenchimento(form){
+for (i=0;i<form.length;i++){
+var obg = form[i].obrigatorio;
+if (obg==1){
+if (form[i].value == ""){
+var nome = form[i].name
+alert("O campo " + nome + " é obrigatório.")
+form[i].focus();
+return false
+}
+}
+}
+return true
+}
+</script>
+
+</head>
+<body>
+
+<div id="tooplate_wrapper"><span id="top"></span>
+	<div id="tooplate_header">
+	    	<div id="site_title"><h1><a href="#">Personal Website</a></h1></div>
+
+        <div id="tooplate_menu">
+             <ul>
+			    <li><a href="file:///C:/Users/Alysson/Desktop/trabalho/Nova%20pasta%20(4)/2028_personal/index.html"><span class="home"></span>Pagina Inicial</a></li>
+                <li><a href="file:///C:/Users/Alysson/Desktop/trabalho/Nova%20pasta%20(4)/2028_personal/clientes.html"><span class="aboutus"></span>Clientes</a></li>
+                <li><a href="file:///C:/Users/Alysson/Desktop/trabalho/Nova%20pasta%20(4)/2028_personal/editar.html"><span class="services"></span>Editar</a></li>
+                        
+                
+            </ul>   	
+        </div> <!-- end of tooplate_menu -->
+		
+        <div class="cleaner"></div>
+    </div> <!-- end of header -->
+    
+    <div id="tooplate_main">
+    	
+    	<div class="content"><span id="home"></span>
+    		<h2>Clientes Cadastrados</h2>
+            <div class="cleaner h30"></div>
+			
+      
+			      
+<table border="1">
+<tr>
+<th>Nome</th>
+<th>Endereço</th>
+<th>Açoes</th>
+</tr>
+</table>
+
+           
+			
+            <div class="cleaner h30"></div>
+            <div class="cleaner"></div>
+			
+    	</div>
+        <div class="content_bottom"></div>
+        
+
+
+       
+              	
+            
+   
+         
+	
+</div>
+
+</body>
+</html>
