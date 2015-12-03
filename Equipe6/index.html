@@ -14,7 +14,7 @@
         <h1 id="titulo">trabalho</h1>
         <p id="desc">Equipe: Matheus Loureiro e Felipe Ribeiro</p>
       </div>
-      <div class="col-md-6 margin">
+      <!-- <div class="col-md-6 margin">
         <form action="#" id="enviarservico" method="POST">
           <div class="form-group col-md-6">
             <label>Serviço:</label>
@@ -28,10 +28,10 @@
             <button type="submit" class="btn btn-default">Enviar</button>
           </div>
         </form>
-      </div>
-      <div class="col-md-6 margin">
+      </div> -->
+      <!-- <div class="col-md-12 margin">
         <p>Aqui você poderá verificar e adicionar os serviços juntamente com a quantidade <br><br> Ao lado, você verá o formulário intuitivo para inserção de algum <strong>dado</strong> e abaixo contém um <strong>gráfico</strong> e uma <strong>tabela</strong> com o somatório e filtragem mensal.</p>
-      </div>
+      </div> -->
       <div class="col-md-12 margin">
         <h2 class="titulo">Gráfico</h2>
         <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -47,18 +47,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Pedreiros</td>
-                <td>889</td>
-              </tr>
-              <tr>
-                <td>Pintores</td>
-                <td>527</td>
-              </tr>
-              <tr>
-                <td>Marceneiros</td>
-                <td>557</td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -70,6 +59,24 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <script>
+
+    $(document).ready(function(){
+       $.ajax({
+          url: 'http://localhost:8080/Trabalho/dados', // name of file you want to parse
+          dataType: "xml", // type of file you are trying to read
+          success: parse, // name of the function to call upon success
+          async:    false,
+          error: function(xhr, status, error) { 
+            alert("error");
+          }
+        });
+
+       function parse(xmldata) {
+        $(xmldata).find("series").each(function(){
+          $('table.table').append('<tr><td>'+$(this).find('name').text()+'</td><td>'+$(this).find('total').text()+'</td></tr>');
+        });
+      }
+    });
 
     $(document).ready(function() {
       var qtde;
@@ -112,50 +119,51 @@
         }
       });
     })
-
-  $(function() {
-    $('#container').highcharts({
-      title: {
-        text: '',
-        x: -20 //center
-      },
-      xAxis: {
-        categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
-      },
-      yAxis: {
-        title: {
-            text: 'Serviços'
-        },
-        plotLines: [{
-            value: 0,
-            width: 1,
-            color: '#808080'
-        }]
-      },
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle',
-        borderWidth: 0
-      },
-      series: [{
-        name: 'Pedreiros',
-        data: [50, 60, 90, 100, 150, 20, 234, 20, 10, 5, 50, 100]
-      }, {
-        name: 'Pintores',
-        data: [40, 20, 10, 50, 110, 45, 22, 29, 43, 55, 43, 60]
-      }, {
-        name: 'Marceneiros',
-        data: [20, 10, 110, 26, 29, 140, 10, 5, 10, 40, 67, 90]
-      }],
-      credits: {
-        enabled: false
-      },
-      chart: {
-        backgroundColor: 'transparent'
-      }
-    });
-  });
   </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var options = {
+        chart: {
+          renderTo: 'container',
+          backgroundColor: null
+        },
+        title: {
+          text: ''
+        },
+        xAxis: {
+          categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+        },
+        yAxis: {
+          title: {
+            text: 'Quantidade'
+          }
+        },
+        series: [],
+        credits: {
+          enabled: false
+        }
+      };
+      
+      $.get('http://localhost:8080/Trabalho/dados', function(xml) {
+        var $xml = $(xml);
+        
+        $xml.find('series').each(function(i, series) {
+          var seriesOptions = {
+            name: $(series).find('name').text(),
+            data: []
+          };
+          
+          $(series).find('data point').each(function(i, point) {
+            seriesOptions.data.push(
+              parseInt($(point).text())
+              );
+          });
+          
+          options.series.push(seriesOptions);
+        });
+        var chart = new Highcharts.Chart(options);
+      });
+    });
+</script>
 </body>
 </html>
